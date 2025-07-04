@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowCheck - Analizador de Diagramas de Flujo</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🔄 FlowCheck</h1>
+            <p>Analizador Inteligente de Diagramas de Flujo</p>
+        </header>
+
+        <main class="main-content">
+            <div class="upload-section" id="upload-area">
+                <div class="upload-icon">📊</div>
+                <div class="upload-text">Arrastra tu diagrama de flujo aquí</div>
+                <div class="upload-hint">o haz clic para seleccionar un archivo (PNG, JPG, JPEG)</div>
+                <input type="file" id="file-input" accept="image/*">
+            </div>
+
+            <div class="preview-section" id="preview-section">
+                <h3>Vista previa de tu diagrama:</h3>
+                <img id="preview-image" class="preview-image" alt="Vista previa">
+                <div>
+                    <button class="btn" id="analyze-btn">🔍 Analizar Diagrama</button>
+                    <button class="btn" id="reset-btn">🔄 Subir Otro</button>
+                </div>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Analizando tu diagrama de flujo...</p>
+            </div>
+
+            <div class="results-section" id="results-section">
+                <div class="score-card" id="score-card">
+                    <div class="score-number" id="score-number">0</div>
+                    <div class="score-text">Puntuación del Diagrama</div>
+                </div>
+
+                <div class="analysis-grid">
+                    <div class="analysis-card">
+                        <h3>🔷 Símbolos Detectados</h3>
+                        <ul class="symbol-list" id="symbols-list"></ul>
+                    </div>
+
+                    <div class="analysis-card">
+                        <h3>⚠️ Errores Encontrados</h3>
+                        <ul class="error-list" id="errors-list"></ul>
+                    </div>
+                </div>
+
+                <div class="feedback-section">
+                    <h3>💡 Retroalimentación</h3>
+                    <p id="feedback-text"></p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/FlowCheckModel.js"></script>
+    <script src="js/FlowCheckView.js"></script>
+    <script src="js/FlowCheckController.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
